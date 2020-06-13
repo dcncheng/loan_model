@@ -1,0 +1,13 @@
+name: loan_model
+channels:
+  - defaults
+dependencies:
+  - numpy>=1.18.1,<1.19.0
+  - pandas>=0.25.3,<0.26.0
+  - scikit-learn>=0.22.1,<0.23.0
+  - joblib>=0.14.1,<0.15.0
+  - psycopg2-binary
+  - boto3>=1.12.48
+  - s3fs>=0.4.2
+  - pip:
+    - mlflow>=1.8.0

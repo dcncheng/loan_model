@@ -1,0 +1,10 @@
+name: loan_model
+
+conda_env: conda.yaml
+
+entry_points:
+    main:
+        parameters:
+        command: "python train_model.py -r {}"
+    score:
+        command: "python score_model.py"
