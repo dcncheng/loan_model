@@ -6,7 +6,7 @@ dependencies:
   - pandas>=0.25.3,<0.26.0
   - scikit-learn>=0.22.1,<0.23.0
   - joblib>=0.14.1,<0.15.0
-  - psycopg2-binary==2.8.5
+  - psycopg2>=2.8.5
   - boto3>=1.12.48
   - s3fs>=0.4.2
   - pip:
