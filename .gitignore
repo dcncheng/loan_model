@@ -117,3 +117,6 @@ packages/loan_model/loan_model/datasets/*.txt
 
 # trained models
 packages/loan_model/loan_model/trained/*.pkl *.h5
+
+# mlflow
+mlruns/
