@@ -1,0 +1,6 @@
+Remove the following from Jenkins
+System-CPython-2.6
+/System/Library/Frameworks/Python.framework/Versions/2.6
+
+System-CPython-2.7
+/System/Library/Frameworks/Python.framework/Versions/2.7

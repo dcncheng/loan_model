@@ -5,9 +5,9 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import MinMaxScaler 
 
-from loan_model.processing import preprocessors as pp
-from loan_model.config import config
-from loan_model.config import model_config
+from processing import preprocessors as pp
+from config import config
+from config import model_config
 
 import logging
 _logger = logging.getLogger(__name__)

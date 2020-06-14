@@ -1,9 +1,9 @@
 import pathlib
 
-import loan_model
+# import loan_model
 
-PACKAGE_ROOT = pathlib.Path(loan_model.__file__).resolve().parent
-TRAINED_MODEL_DIR = PACKAGE_ROOT / "trained_models"
+# PACKAGE_ROOT = pathlib.Path(loan_model.__file__).resolve().parent
+TRAINED_MODEL_DIR = "trained_models"
 
 # DATASET_DIR = PACKAGE_ROOT / "datasets"
 DATASET_DIR = "s3://cs-mlflow-artifact-store/datasets/loan_model"

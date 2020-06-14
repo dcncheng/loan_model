@@ -2,11 +2,12 @@ import numpy as np
 import pandas as pd
 from sklearn.model_selection import train_test_split
 
-from loan_model import pipeline
-from loan_model.config import config
-from loan_model.config import model_config
-from loan_model.processing.data_management import load_dataset, save_pipeline, load_current_pipeline, dataset_location
-from loan_model import __version__ as _version
+# from loan_model import pipeline
+from config import config
+from config import model_config
+from pipeline import loan_pipe
+from processing.data_management import load_dataset, dataset_location
+# from loan_model import __version__ as _version
 
 import logging
 _logger = logging.getLogger(__name__)
@@ -35,9 +36,9 @@ def run_training() -> None:
     # Set MLFlow experiment
     mlflow.set_experiment(config.EXPERIMENT_NAME)
 
-    pipeline.loan_pipe.fit(X_train[config.FEATURES], y_train)
+    loan_pipe.fit(X_train[config.FEATURES], y_train)
 
-    # save the model to mlflow
+    # Log dataset and parameters to mlflow
     dataset_full_path_name = dataset_location()
     mlflow.set_tag("dataset", dataset_full_path_name)
 
@@ -50,9 +51,13 @@ def run_training() -> None:
     mlflow.log_param("max_iter", model_config.MAX_ITER)
     mlflow.log_param("multi_class", model_config.MULTI_CLASS)
 
+    # Log the metrics
+    score = loan_pipe.score(X_train, y_train)
+    mlflow.log_metric("score", score)
+
     # Save the sklearn pipeline as mlflow model
     conda_env = mlflow.sklearn.get_default_conda_env()
-    mlflow.sklearn.log_model(pipeline, "sklearn_pipeline", conda_env=conda_env)
+    mlflow.sklearn.log_model(loan_pipe, "sklearn_pipeline", conda_env=conda_env)
 
 if __name__ == "__main__":
     run_training()

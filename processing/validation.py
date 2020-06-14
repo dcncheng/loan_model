@@ -1,4 +1,4 @@
-from loan_model.config import config
+from config import config
 
 import pandas as pd
 
