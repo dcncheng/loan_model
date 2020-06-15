@@ -7,11 +7,18 @@ TRAINED_MODEL_DIR = "trained_models"
 
 # DATASET_DIR = PACKAGE_ROOT / "datasets"
 DATASET_DIR = "s3://cs-mlflow-artifact-store/datasets/loan_model"
-S3_MODEL_PATH = "s3://cs-mlflow-artifact-store/Mlflow/1/75487555f27441a7a991f28132797549/artifacts/sklearn_pipeline"
+S3_MODEL_PATH = "s3://cs-mlflow-artifact-store/Mlflow/1/b17e1c6a3034465eba8984c438d9bc87/artifacts/sklearn_pipeline"
 EXPERIMENT_NAME = "loan_model"
 
-# MLFLOW
+# 
+# MLFLOW Tracking server
+# 
+# Pointing to Azuer
 MLFLOW_REMOTE_SERVER_URI = "http://104.210.54.211:5000"
+#
+# Pointing to CLC
+# wrong one: MLFLOW_REMOTE_SERVER_URI = "http://uc1pltfk8sn04.aiml.ctl.io:31480"
+# MLFLOW_REMOTE_SERVER_URI = "http://mlflow.aiml.ctl.io/"
 
 # data
 TRAINING_DATA_FILE = "lending_club_loan_data.csv"

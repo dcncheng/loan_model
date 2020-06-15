@@ -9,12 +9,12 @@ pipeline {
         }
         stage('Build') {
             steps {
-                echo 'Building...'
+                echo 'Building a docker image...'
             }
         }
         stage('Deploy') {
             steps {
-                echo 'Model Deployed...'
+                echo 'Model Deployed clc, azure,...'
             }
         }
     }
