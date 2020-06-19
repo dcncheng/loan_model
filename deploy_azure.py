@@ -9,9 +9,6 @@ def run_deployment() -> None:
     """Train the model to Azure."""
 
     # Create or load an existing Azure ML workspace. You can also load an existing workspace using
-    # Workspace.get(name=model_config.WORKSPACE_NAME,
-    #                                 subscription_id=model_config.SUBSCRIPTION_ID,
-    #                                 resource_group=model_config.RESOURCE_GROUP)
     azure_workspace = Workspace.get(name=model_config.WORKSPACE_NAME,
                                     subscription_id=model_config.SUBSCRIPTION_ID,
                                     resource_group=model_config.RESOURCE_GROUP)

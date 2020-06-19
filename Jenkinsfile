@@ -1,6 +1,11 @@
 pipeline {
     agent { docker {image 'python:3.7-alpine'} }
     stages {
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
         stage('Init') {
             steps {
                 echo 'Initialize requirements'
