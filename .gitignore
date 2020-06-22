@@ -120,3 +120,6 @@ packages/loan_model/loan_model/trained/*.pkl *.h5
 
 # mlflow
 mlruns/
+
+# sandbox
+sandbox/
